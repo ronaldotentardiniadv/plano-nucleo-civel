@@ -1,0 +1,361 @@
+/* ============================================================
+   PLANO DO NÚCLEO CÍVEL
+   Estilos compartilhados por todas as páginas
+   ============================================================ */
+
+:root{
+  --preto:         #111111;
+  --carvao:        #1A1A1A;
+  --grafite:       #232323;
+  --cinza-escuro:  #2E2E2E;
+  --cinza-medio:   #B8B8B8;
+  --cinza-claro:   #E8E8E8;
+  --branco:        #FFFFFF;
+  --dourado:       #C89B3C;
+  --dourado-claro: #E0B85A;
+  --fundo-claro:   #F7F7F7;
+  --fundo-card:    #FFFFFF;
+  --texto-escuro:  #1A1A1A;
+}
+
+*{ box-sizing: border-box; }
+html, body{ margin:0; padding:0; }
+
+body{
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: var(--fundo-claro);
+  color: var(--texto-escuro);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* ---------- BARRA SUPERIOR FIXA ---------- */
+.topbar{
+  background: var(--preto);
+  color: var(--branco);
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--dourado);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-size: 13px;
+}
+.topbar .marca{
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--branco);
+  font-size: 14px;
+}
+.topbar .marca span{ color: var(--dourado-claro); }
+.topbar nav a{
+  color: var(--cinza-medio);
+  text-decoration: none;
+  margin-left: 16px;
+  font-size: 12.5px;
+  letter-spacing: .3px;
+  transition: color .15s ease;
+}
+.topbar nav a:hover{ color: var(--dourado-claro); }
+.topbar nav a.ativo{ color: var(--dourado); font-weight: 600; }
+
+/* ---------- HERO / CAPA ---------- */
+header.hero{
+  background: linear-gradient(135deg, var(--carvao) 0%, var(--preto) 100%);
+  color: var(--branco);
+  padding: 55px 30px 45px;
+  text-align: center;
+  border-bottom: 3px solid var(--dourado);
+}
+
+/* Divisor decorativo dourado (substitui o logo) */
+.divisor-dourado{
+  width: 80px;
+  height: 3px;
+  background: var(--dourado);
+  margin: 0 auto 28px;
+}
+
+header.hero h1{
+  margin: 0 0 10px;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  color: var(--branco);
+}
+header.hero h2{
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--cinza-medio);
+  letter-spacing: .8px;
+}
+header.hero .meta{
+  margin-top: 22px;
+  font-size: 13px;
+  color: var(--cinza-medio);
+  padding-top: 18px;
+  border-top: 1px solid var(--cinza-escuro);
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+header.hero .meta strong{ color: var(--dourado-claro); font-weight: 500; }
+
+/* ---------- CONTAINER ---------- */
+main{
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px 60px;
+}
+
+/* ---------- SEÇÕES / CARDS ---------- */
+section.card{
+  background: var(--fundo-card);
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  padding: 30px 28px;
+  margin-bottom: 28px;
+  border-top: 3px solid var(--dourado);
+  page-break-inside: avoid;
+}
+section.card h2{
+  margin: 0 0 8px;
+  color: var(--preto);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+section.card h3{
+  margin: 26px 0 10px;
+  color: var(--preto);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--cinza-claro);
+}
+section.card .subtitulo{
+  margin: 0 0 22px;
+  font-size: 13px;
+  color: #777;
+  letter-spacing: .3px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--cinza-claro);
+}
+section.card p{ margin: 0 0 14px; }
+section.card ul{ margin: 0 0 14px 0; padding-left: 20px; }
+section.card li{ margin-bottom: 8px; }
+
+/* ---------- SUMÁRIO (INDEX) ---------- */
+.sumario{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 10px;
+}
+.sumario a{
+  display: block;
+  background: var(--fundo-card);
+  border: 1px solid #E5E5E5;
+  border-left: 4px solid var(--dourado);
+  border-radius: 4px;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: var(--texto-escuro);
+  transition: all .18s ease;
+}
+.sumario a:hover{
+  border-left-color: var(--preto);
+  background: #FAFAFA;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  transform: translateY(-2px);
+}
+.sumario a .num{
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--dourado);
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.sumario a .titulo{
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--preto);
+  margin-bottom: 4px;
+}
+.sumario a .desc{
+  display: block;
+  font-size: 12.5px;
+  color: #777;
+  line-height: 1.5;
+}
+
+/* ---------- TABELAS ---------- */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+thead th{
+  background: var(--preto);
+  color: var(--branco);
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .4px;
+  border-bottom: 2px solid var(--dourado);
+}
+tbody td{
+  padding: 11px 12px;
+  border-bottom: 1px solid #ECECEC;
+  vertical-align: top;
+}
+tbody tr:nth-child(even){ background: #FAFAFA; }
+tbody tr:hover{ background: #F2F2F2; }
+
+.data-fixa{
+  color: var(--preto);
+  font-weight: 600;
+  border-left: 3px solid var(--dourado);
+  padding-left: 8px;
+}
+
+/* ---------- TAGS ---------- */
+.tag{
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.tag-concluido{ background: #2E2E2E; color: #E8E8E8; }
+.tag-andamento{ background: var(--dourado); color: var(--preto); }
+.tag-futuro{ background: #E8E8E8; color: var(--preto); }
+.tag-continuo{ background: #F5EBD0; color: #6B5A1E; }
+
+/* ---------- NAVEGAÇÃO ENTRE PÁGINAS ---------- */
+.nav-paginas{
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.nav-paginas a{
+  flex: 1;
+  display: block;
+  background: var(--fundo-card);
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: var(--texto-escuro);
+  font-size: 13.5px;
+  transition: all .15s ease;
+  border-left: 4px solid var(--dourado);
+}
+.nav-paginas a:hover{
+  background: #FAFAFA;
+  border-left-color: var(--preto);
+  transform: translateY(-1px);
+}
+.nav-paginas a .dir{
+  display: block;
+  font-size: 11px;
+  color: #999;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.nav-paginas a .titulo{
+  display: block;
+  font-weight: 600;
+  color: var(--preto);
+}
+.nav-paginas a.proximo{ text-align: right; }
+.nav-paginas a.voltar-index{
+  background: var(--preto);
+  color: var(--branco);
+  border-left-color: var(--dourado);
+  text-align: center;
+}
+.nav-paginas a.voltar-index .titulo{ color: var(--branco); }
+.nav-paginas a.voltar-index .dir{ color: var(--dourado-claro); }
+
+/* ---------- RODAPÉ ---------- */
+footer.rodape{
+  text-align: center;
+  font-size: 12.5px;
+  color: #999;
+  padding: 24px 10px 40px;
+  border-top: 1px solid #E5E5E5;
+  margin-top: 10px;
+  background: var(--fundo-claro);
+}
+footer.rodape strong{ color: var(--preto); }
+footer.rodape .dourado{ color: var(--dourado); }
+
+/* ---------- RESPONSIVO ---------- */
+@media (max-width: 720px){
+  .topbar{ flex-direction: column; gap: 8px; padding: 10px 14px; }
+  .topbar nav a{ margin: 0 8px; font-size: 12px; }
+  header.hero{ padding: 32px 18px 26px; }
+  header.hero h1{ font-size: 22px; }
+  section.card{ padding: 22px 18px; }
+  thead th, tbody td{ padding: 9px 8px; font-size: 13px; }
+  table{ font-size: 13px; }
+  .nav-paginas{ flex-direction: column; }
+  .nav-paginas a.proximo{ text-align: left; }
+}
+
+/* ---------- IMPRESSÃO ---------- */
+@page{
+  size: A4;
+  margin: 22mm 14mm 18mm 14mm;
+  @top-left{
+    content: "PLANO DO NÚCLEO CÍVEL";
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt;
+    color: #111;
+    letter-spacing: .5px;
+    font-weight: 600;
+  }
+  @top-right{
+    content: "Documento de uso interno";
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt;
+    color: #777;
+  }
+  @bottom-left{
+    content: "Elaborado por Ronaldo Muniz Machado Júnior • Data: 21/09/2026";
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 8.5pt;
+    color: #999;
+  }
+  @bottom-right{
+    content: "Página " counter(page) " de " counter(pages);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 8.5pt;
+    color: #111;
+    font-weight: 600;
+  }
+}
+@media print{
+  body{ background: #fff; }
+  .topbar, .nav-paginas{ display: none; }
+  header.hero{ page-break-after: always; }
+  section.card{ box-shadow: none; border: 1px solid #DDD; page-break-inside: avoid; }
+  thead th, .tag{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
